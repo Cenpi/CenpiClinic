@@ -1,0 +1,56 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="page-header">
+    <h1>
+        Search adm_eps
+    </h1>
+    <p>
+        <?php echo $this->tag->linkTo(["adm_eps/new", "Create adm_eps"]) ?>
+    </p>
+</div>
+
+<?php echo $this->getContent() ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "adm_eps/search",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldIdeps" class="col-sm-2 control-label">IdEps</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["idEps", "type" => "number", "class" => "form-control", "id" => "fieldIdeps"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldNiteps" class="col-sm-2 control-label">NitEps</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["nitEps", "size" => 30, "class" => "form-control", "id" => "fieldNiteps"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldNombreeps" class="col-sm-2 control-label">NombreEps</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["nombreEps", "size" => 30, "class" => "form-control", "id" => "fieldNombreeps"]) ?>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["Search", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>
