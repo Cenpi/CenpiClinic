@@ -1,0 +1,49 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="page-header">
+    <h1>
+        Search adm_genero
+    </h1>
+    <p>
+        <?php echo $this->tag->linkTo(["adm_genero/new", "Create adm_genero"]) ?>
+    </p>
+</div>
+
+<?php echo $this->getContent() ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "adm_genero/search",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldIdgenero" class="col-sm-2 control-label">IdGenero</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["idGenero", "type" => "number", "class" => "form-control", "id" => "fieldIdgenero"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldNombregenero" class="col-sm-2 control-label">NombreGenero</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["nombreGenero", "size" => 30, "class" => "form-control", "id" => "fieldNombregenero"]) ?>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["Search", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>

@@ -1,0 +1,65 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<?php use Phalcon\Tag; ?>
+
+<div class="row">
+    <nav>
+        <ul class="pager">
+            <li class="previous"><?php echo $this->tag->linkTo(["adm_genero/index", "Go Back"]); ?></li>
+            <li class="next"><?php echo $this->tag->linkTo(["adm_genero/new", "Create "]); ?></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="page-header">
+    <h1>Search result</h1>
+</div>
+
+<?php echo $this->getContent(); ?>
+
+<div class="row">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>IdGenero</th>
+            <th>NombreGenero</th>
+
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($page->items as $adm_genero): ?>
+            <tr>
+                <td><?php echo $adm_genero->idGenero ?></td>
+            <td><?php echo $adm_genero->nombreGenero ?></td>
+
+                <td><?php echo $this->tag->linkTo(["adm_genero/edit/" . $adm_genero->idGenero, "Edit"]); ?></td>
+                <td><?php echo $this->tag->linkTo(["adm_genero/delete/" . $adm_genero->idGenero, "Delete"]); ?></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+
+<div class="row">
+    <div class="col-sm-1">
+        <p class="pagination" style="line-height: 1.42857;padding: 6px 12px;">
+            <?php echo $page->current, "/", $page->total_pages ?>
+        </p>
+    </div>
+    <div class="col-sm-11">
+        <nav>
+            <ul class="pagination">
+                <li><?php echo $this->tag->linkTo("adm_genero/search", "First") ?></li>
+                <li><?php echo $this->tag->linkTo("adm_genero/search?page=" . $page->before, "Previous") ?></li>
+                <li><?php echo $this->tag->linkTo("adm_genero/search?page=" . $page->next, "Next") ?></li>
+                <li><?php echo $this->tag->linkTo("adm_genero/search?page=" . $page->last, "Last") ?></li>
+            </ul>
+        </nav>
+    </div>
+</div>
