@@ -1,0 +1,12 @@
+
+<?php
+
+    $genero = AdmGenero::find();
+
+    echo $this->tag->select([
+        'genero',
+        $genero,
+        'using' => ['idGenero','nombreGenero',]
+    ])
+
+?>
