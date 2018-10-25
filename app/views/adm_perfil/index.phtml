@@ -1,0 +1,56 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="page-header">
+    <h1>
+        Search adm_perfil
+    </h1>
+    <p>
+        <?php echo $this->tag->linkTo(["adm_perfil/new", "Create adm_perfil"]) ?>
+    </p>
+</div>
+
+<?php echo $this->getContent() ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "adm_perfil/search",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldIdperfil" class="col-sm-2 control-label">IdPerfil</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["idPerfil", "type" => "number", "class" => "form-control", "id" => "fieldIdperfil"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldNombreperfil" class="col-sm-2 control-label">NombrePerfil</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["nombrePerfil", "size" => 30, "class" => "form-control", "id" => "fieldNombreperfil"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDescperfil" class="col-sm-2 control-label">DescPerfil</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["descPerfil", "size" => 30, "class" => "form-control", "id" => "fieldDescperfil"]) ?>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["Search", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>

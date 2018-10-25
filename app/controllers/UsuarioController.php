@@ -18,6 +18,7 @@ class UsuarioController extends ControllerBase
     public function pruebaAction()
     {
         
+        
     }
 
 
@@ -125,7 +126,7 @@ class UsuarioController extends ControllerBase
 
             return;
         }
-
+  
         $usuario = new Usuario();
         $usuario->tipoDocumento = $this->request->getPost("tipoDocumento");
         $usuario->documento = $this->request->getPost("documento");
@@ -142,8 +143,8 @@ class UsuarioController extends ControllerBase
         $usuario->estado = $this->request->getPost("estado");
         $usuario->perfil = $this->request->getPost("perfil");
         $usuario->fechaCreacion = $this->request->getPost("fechaCreacion");
-        
-
+   
+    
         if (!$usuario->save()) {
             foreach ($usuario->getMessages() as $message) {
                 $this->flash->error($message);
@@ -157,7 +158,7 @@ class UsuarioController extends ControllerBase
             return;
         }
 
-        $this->flash->success("usuario was created successfully");
+        $this->flash->success("Usuario creado correctamente");
 
         $this->dispatcher->forward([
             'controller' => "usuario",
@@ -227,7 +228,7 @@ class UsuarioController extends ControllerBase
             return;
         }
 
-        $this->flash->success("usuario was updated successfully");
+        $this->flash->success("Usuario editado correctamente");
 
         $this->dispatcher->forward([
             'controller' => "usuario",
@@ -268,7 +269,7 @@ class UsuarioController extends ControllerBase
             return;
         }
 
-        $this->flash->success("usuario was deleted successfully");
+        $this->flash->success("Usuario eliminado correctamente");
 
         $this->dispatcher->forward([
             'controller' => "usuario",

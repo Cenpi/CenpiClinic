@@ -38,7 +38,7 @@ CREATE TABLE `cenpiclinic`.`adm_genero`(
 );
 
 CREATE TABLE `cenpiclinic`.`usuario_estado`(  
-  `idEstado` INT NOT NULL,
+  `idEstado` INT NOT NULL AUTO_INCREMENT,
   `nombreEstado` VARCHAR(30) NOT NULL,
   `descEstado` VARCHAR(300) NOT NULL,
   PRIMARY KEY (`idEstado`)
