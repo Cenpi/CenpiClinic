@@ -83,7 +83,7 @@ class AdmEpsController extends ControllerBase
                 return;
             }
 
-            $this->view->idEps = $adm_eps->idEps;
+            $this->view->id = $adm_eps->idEps;
 
             $this->tag->setDefault("idEps", $adm_eps->idEps);
             $this->tag->setDefault("nitEps", $adm_eps->nitEps);
