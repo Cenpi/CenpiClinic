@@ -12,6 +12,12 @@ class UsuarioController extends ControllerBase
     public function indexAction()
     {
         $this->persistent->parameters = null;
+        $this->dispatcher->forward([
+            "controller" => "usuario",
+            "action" => "search"
+        ]);
+
+        return;
     }
 
 
