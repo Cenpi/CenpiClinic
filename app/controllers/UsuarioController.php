@@ -150,7 +150,7 @@ class UsuarioController extends ControllerBase
         $usuario->perfil = $this->request->getPost("perfil");
         $usuario->fechaCreacion = $this->request->getPost("fechaCreacion");
    
-    
+       
         if (!$usuario->save()) {
             foreach ($usuario->getMessages() as $message) {
                 $this->flash->error($message);

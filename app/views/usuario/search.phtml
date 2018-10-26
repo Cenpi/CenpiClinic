@@ -9,8 +9,7 @@
 <div class="row">
     <nav>
         <ul class="pager">
-            <li class="previous"><?php echo $this->tag->linkTo(["usuario/index", "Go Back"]); ?></li>
-            <li class="next"><?php echo $this->tag->linkTo(["usuario/new", "Create "]); ?></li>
+            <li class="next"><?php echo $this->tag->linkTo(["usuario/new", "Crear "]); ?></li>
         </ul>
     </nav>
 </div>
@@ -25,48 +24,30 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-            <th>IdUsuario</th>
-            <th>TipoDocumento</th>
-            <th>Documento</th>
-            <th>PrimerNombre</th>
-            <th>SegundoNombre</th>
-            <th>PrimerApellido</th>
-            <th>SegundoApellido</th>
-            <th>Direccion</th>
-            <th>Genero</th>
+                   
+            <th>Nombre</th>
+            <th>Apellido</th>
             <th>Correo</th>
-            <th>Telefono</th>
-            <th>Contrasena</th>
-            <th>FechaNacimiento</th>
             <th>Estado</th>
             <th>Perfil</th>
             <th>FechaCreacion</th>
 
                 <th></th>
-                <th></th>
+               
             </tr>
         </thead>
         <tbody>
         <?php foreach ($page->items as $usuario): ?>
             <tr>
-                <td><?php echo $usuario->idUsuario ?></td>
-            <td><?php echo $usuario->AdmTipoDocumento->iniciales ?></td>
-            <td><?php echo $usuario->documento ?></td>
+            
             <td><?php echo $usuario->primerNombre ?></td>
-            <td><?php echo $usuario->segundoNombre ?></td>
             <td><?php echo $usuario->primerApellido ?></td>
-            <td><?php echo $usuario->segundoApellido ?></td>
-            <td><?php echo $usuario->direccion ?></td>
-            <td><?php echo $usuario->AdmGenero->nombreGenero ?></td>
             <td><?php echo $usuario->correo ?></td>
-            <td><?php echo $usuario->telefono ?></td>
-            <td><?php echo $usuario->contrasena ?></td>
-            <td><?php echo $usuario->fechaNacimiento ?></td>
             <td><?php echo $usuario->UsuarioEstado->nombreEstado ?></td>
             <td><?php echo $usuario->AdmPerfil->nombrePerfil ?></td>
             <td><?php echo $usuario->fechaCreacion ?></td>
 
-                <td><?php echo $this->tag->linkTo(["usuario/edit/" . $usuario->idUsuario, "Edit"]); ?></td>
+                <td><?php echo $this->tag->linkTo(["usuario/edit/" . $usuario->idUsuario, "Editar"]); ?></td>
                 
             </tr>
         <?php endforeach; ?>
