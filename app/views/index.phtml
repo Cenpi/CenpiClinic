@@ -7,13 +7,14 @@
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title> CenpiClinic</title>
         <?php $this->assets->outputCss('headercss'); ?>
-        <link rel="shortcut icon" type="image/x-icon" href="<?php echo $this->url->get('img/favicon.ico')?>"/>
+        <link rel="shortcut icon" type="image/x-icon" href="<?php echo $this->url->get('img/faviconn.ico')?>"/>
     </head>
     <body>
         <!--<div class="container">
             <?php //echo $this->getContent(); ?>
         </div> -->
 
+<?php if($this->session->get('auth')){ ?>
 <div id="wrapper">
 
 <!-- Navigation -->
@@ -230,7 +231,9 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Cerrar sesión</a>
+                        <li>
+                        <?php echo $this->tag->linkTo(["sesion/logout",
+                        '<i class="fa fa-dashboard fa-fw"></i> Cerrar sesión']); ?>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -253,19 +256,30 @@
                             </div>
                             <!-- /input-group -->
                         </li>
+
+                        <?php $user = $this->session->get('auth') ?>
+                        <?php if( $user['rol'] === 'Medico' ){?>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                          <?php echo $this->tag->linkTo(["index",
+                        '<i class="fa fa-dashboard fa-fw"></i> Dashboard']); ?>
                         </li>
+                        <?php } ?>
+                        
+                        <?php if( $user['rol'] === 'Administrador' ){?>
                         <li>
-                            <a href="usuario/search"><i class="fa fa-bar-chart-o fa-fw"></i> Usuarios <span class="fa arrow"></span></a>
-                           
+                        <?php echo $this->tag->linkTo(["usuario/search",
+                            '<i class="fa fa-bar-chart-o fa-fw"></i> Usuarios <span class="fa arrow"></span>'
+                        ]) ?>                                                       
                         </li>
+                        <?php } ?>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a href=""><i class="fa fa-table fa-fw"></i> Tables</a>
                         </li>
+
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                            <a href=""><i class="fa fa-edit fa-fw"></i> Forms</a>
                         </li>
+
                         <li>
                            
                             <!-- /.nav-second-level -->
@@ -299,7 +313,14 @@
 <!-- /#page-wrapper -->
 
 </div>
+<?php } else{ ?>
 
+    <div class="row">
+        <div class="col-md-8">
+        <?php echo $this->getContent(); ?>
+        </div>
+    </div>
+<?php } ?>
         <?php $this->assets->outputJs('headerjs'); ?>
        
     </body>

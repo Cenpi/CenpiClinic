@@ -135,22 +135,6 @@
 </div>
 
 <div class="form-group">
-    <label for="fieldEstado" class="col-sm-2 control-label">Estado</label>
-    <div class="col-sm-5">
-        <?php
-            $estado = UsuarioEstado::find();
-            echo $this->tag->select([
-                'estado',
-                $estado,
-                'useEmpty' => true,
-                'using' => ['idEstado', 'nombreEstado'],
-                 'class' => "form-control", 
-                 'emptyText' => 'Elija un estado'
-            ]) ?>
-    </div>
-</div>
-
-<div class="form-group">
     <label for="fieldPerfil" class="col-sm-2 control-label">Perfil</label>
     <div class="col-sm-5">
         <?php 
@@ -166,17 +150,11 @@
     </div>
 </div>
 
-<div class="form-group">
-    <label for="fieldFechacreacion" class="col-sm-2 control-label">Fecha creacion</label>
-    <div class="col-sm-5">
-        <?php echo $this->tag->dateField(["fechaCreacion", "size" => 30, "class" => "form-control", "id" => "fieldFechacreacion"]) ?>
-    </div>
-</div>
 
 
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-        <?php echo $this->tag->submitButton(["Save", "class" => "btn btn-primary"]) ?>
+        <?php echo $this->tag->submitButton(["Guardar", "class" => "btn btn-primary"]) ?>
     </div>
 </div>
 

@@ -20,34 +20,15 @@ class UsuarioController extends ControllerBase
         return;
     }
 
-
-    public function pruebaAction()
-    {
-        
-        
-    }
-
-
-    /**
+  /**
      * Searches for usuario
      */
     public function searchAction()
     {
         $numberPage = 1;
-        if ($this->request->isPost()) {
-            $query = Criteria::fromInput($this->di, 'Usuario', $_POST);
-            $this->persistent->parameters = $query->getParams();
-        } else {
-            $numberPage = $this->request->getQuery("page", "int");
-        }
+        
 
-        $parameters = $this->persistent->parameters;
-        if (!is_array($parameters)) {
-            $parameters = [];
-        }
-        $parameters["order"] = "idUsuario";
-
-        $usuario = Usuario::find($parameters);
+        $usuario = Usuario::find();
         if (count($usuario) == 0) {
             $this->flash->notice("The search did not find any usuario");
 
@@ -144,17 +125,16 @@ class UsuarioController extends ControllerBase
         $usuario->genero = $this->request->getPost("genero");
         $usuario->correo = $this->request->getPost("correo");
         $usuario->telefono = $this->request->getPost("telefono");
-        $usuario->contrasena = $this->request->getPost("contrasena");
+        $usuario->contrasena = sha1($this->request->getPost("contrasena"));
         $usuario->fechaNacimiento = $this->request->getPost("fechaNacimiento");
-        $usuario->estado = $this->request->getPost("estado");
+        $usuario->estado = 2;
         $usuario->perfil = $this->request->getPost("perfil");
-        $usuario->fechaCreacion = $this->request->getPost("fechaCreacion");
-   
+        $usuario->fechaCreacion = date('Y-m-d H:m:i');   
        
         if (!$usuario->save()) {
-            foreach ($usuario->getMessages() as $message) {
-                $this->flash->error($message);
-            }
+            
+            $this->flash->error("Error al guardar el usuario.");
+            
 
             $this->dispatcher->forward([
                 'controller' => "usuario",
