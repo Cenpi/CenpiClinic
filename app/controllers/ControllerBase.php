@@ -38,7 +38,8 @@ class ControllerBase extends Controller
         $this->assets
         ->collection('headercss')
         ->addCss('libs/Bootstrap_4.1.3/css/bootstrap.min.css')
-        ->addCss('libs/Fontawesome-free-5.4.2/css/all.min.css');
+        ->addCss('libs/Fontawesome-free-5.4.2/css/all.min.css')
+        ->addCss('libs/StarBoostrap/css/sb-admin.css');
 
         //->addCss('libs/StarBoostrap/vendor/metisMenu/metisMenu.min.css')
         //->addCss('libs/StarBoostrap/dist/css/sb-admin-2.css')
@@ -50,7 +51,8 @@ class ControllerBase extends Controller
         ->addJs('libs/Jquery/jquery.min.js')
         ->addJs('libs/Popper.js/popper.js')
         ->addJs('libs/Bootstrap_4.1.3/js/bootstrap.min.js')
-        ->addJS('libs/Fontawesome-free-5.4.2/js/all.min.js');
+        ->addJS('libs/Fontawesome-free-5.4.2/js/all.min.js')
+        ->addJs('libs/StarBoostrap/js/sb-admin.js');
 
         //->addJs('libs/StarBoostrap/vendor/metisMenu/metisMenu.min.js')
         //->addJs('libs/StarBoostrap/vendor/raphael/raphael.min.js')
