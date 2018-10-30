@@ -7,8 +7,11 @@ class IndexController extends ControllerBase
     {
         $this->assets
         ->collection('headercss')
-        ->addCss('css/index/style.css')
-        ->addCss('css/index/style.css');
+        ->addCss('libs/StarBoostrap/css/sb-admin.css');
+
+        $this->assets
+        ->collection('headerjs')	
+        ->addJs('libs/StarBoostrap/js/sb-admin.js');
     }
 
 }
