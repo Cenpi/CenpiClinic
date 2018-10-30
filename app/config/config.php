@@ -10,8 +10,8 @@ return new \Phalcon\Config([
     'database' => [
         'adapter'     => 'Mysql',
         'host'        => 'localhost',
-        'username'    => 'jdb',
-        'password'    => '43522365',
+        'username'    => 'root',
+        'password'    => '',
         'dbname'      => 'cenpiclinic',
         'charset'     => 'utf8',
     ],
