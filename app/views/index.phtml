@@ -141,6 +141,8 @@
                             ]); 
                     ?>
                 </li>
+                <?php } ?>
+
                 <li class="nav-item">
                     <?php 
                         echo $this->tag->linkTo([
@@ -150,7 +152,23 @@
                             ]); 
                     ?>
                 </li>
-                <?php } ?>
+
+                 <li class="nav-item">
+                    <?php 
+                        echo $this->tag->linkTo([
+                            "gestiones/index",
+                            '<i class="fas fa-book"></i> <span>Gestiones</span>',
+                            "class" => "nav-link"
+                            ]); 
+                    ?>
+                </li>
+               
+
+
+
+
+
+
             </ul>       
             <div id="content-wrapper">
                 <div class="container-fluid">
