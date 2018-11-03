@@ -1,22 +1,75 @@
-<?php
-/**
- * @var \Phalcon\Mvc\View\Engine\Php $this
- */
-?>
+<div class="container-fluid">
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <?php 
+                echo $this->tag->linkTo([
+                    "index",
+                    'Dashboard'
+                    ]); 
+            ?>
+        </li>
+        <li class="breadcrumb-item active">Usuarios</li>
+    </ol>
 
-<?php use Phalcon\Tag; ?>
+    <?php
+    /**
+     * @var \Phalcon\Mvc\View\Engine\Php $this
+     */
+    ?>
 
-<div class="row">
-    <nav>
-        <ul class="pager">
-            <li class="next"><?php echo $this->tag->linkTo(["usuario/new", "Crear "]); ?></li>
-        </ul>
-    </nav>
+    <?php use Phalcon\Tag; ?>
+<!--
+    <div class="row">
+        <nav>
+            <ul class="pager">
+                <li class="next">
+                <?php //echo $this->tag->linkTo(["usuario/new", "Crear "]); ?></li>
+            </ul>
+        </nav>
+    </div>
+-->
+
+
+    <div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i> Listado de usuarios</div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Age</th>
+                        <th>Start date</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>61</td>
+                        <td>2011/04/25</td>
+                        <td>$320,800</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card-footer small text-muted"><?php echo $this->tag->linkTo(["usuario/new", "Crear "]); ?></div>
 </div>
 
-<div class="page-header">
-    <h1>Listado de usuarios</h1>
-</div>
+
+
+
+
+
+
 
 <?php echo $this->getContent(); ?>
 
@@ -71,4 +124,5 @@
             </ul>
         </nav>
     </div>
+</div>
 </div>
