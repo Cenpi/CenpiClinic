@@ -14,7 +14,7 @@
         <?php 
             if($this->session->get('auth')){ 
         ?>
-        <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+        <nav class="navbar navbar-expand navbar-dark bg-dark static-top fixed-top">
             <a class="navbar-brand mr-1" href="index.html"><img src="<?php echo $this->url->get('img/Logo_Cenpi.png')?>"></a>
             <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
                 <i class="fas fa-bars"></i>
@@ -77,7 +77,7 @@
                 </li>
             </ul>
         </nav>
-        <div id="wrapper">
+        <div id="wrapper" style="margin-top:58px">
             <!-- Sidebar -->
             <ul class="sidebar navbar-nav">
                                 <!--
