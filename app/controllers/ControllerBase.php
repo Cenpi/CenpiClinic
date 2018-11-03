@@ -11,7 +11,7 @@ class ControllerBase extends Controller
         
         if($this->session->get('auth')){
 
-       /* }else{            
+       }else{            
             $actual_link = "$_SERVER[REQUEST_URI]";
         
             $server = "http://$_SERVER[HTTP_HOST]/";		
@@ -27,7 +27,7 @@ class ControllerBase extends Controller
                 header("Location: ".$server);
 				die();
             }
-		*/		
+				
         }
 
         $this->assets
