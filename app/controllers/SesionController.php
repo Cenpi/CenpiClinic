@@ -5,7 +5,9 @@ class SesionController extends ControllerBase
 
     public function indexAction()
     {
-
+        $this->assets
+        ->collection('headercss')
+        ->addCss('css/login.css');
     }
 
     private function registerSession($usuario)

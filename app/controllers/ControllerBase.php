@@ -32,23 +32,17 @@ class ControllerBase extends Controller
 
         $this->assets
         ->collection('headercss')
-        ->addCss('vendor/bootstrap/css/bootstrap.min.css')
-        ->addCss('vendor/metisMenu/metisMenu.min.css')
-        ->addCss('dist/css/sb-admin-2.css')
-        ->addCss('vendor/morrisjs/morris.css')
-        ->addCss('vendor/font-awesome/css/font-awesome.min.css');
+        ->addCss('libs/Bootstrap_4.1.3/css/bootstrap.min.css')
+        ->addCss('libs/Fontawesome-free-5.4.2/css/all.min.css')
+        ->addCss('libs/StarBoostrap/css/sb-admin.css');
         
         $this->assets
         ->collection('headerjs')	
-        ->addJs('vendor/jquery/jquery.min.js')
-        ->addJs('vendor/bootstrap/js/bootstrap.min.js')
-        ->addJs('vendor/metisMenu/metisMenu.min.js')
-        ->addJs('vendor/raphael/raphael.min.js')
-        ->addJs('vendor/morrisjs/morris.min.js')
-        ->addJs('data/morris-data.js')
-        ->addJs('dist/js/sb-admin-2.js');
-
-
+        ->addJs('libs/Jquery/jquery.min.js')
+        ->addJs('libs/Popper.js/popper.js')
+        ->addJs('libs/Bootstrap_4.1.3/js/bootstrap.min.js')
+        ->addJS('libs/Fontawesome-free-5.4.2/js/all.min.js')
+        ->addJs('libs/StarBoostrap/js/sb-admin.js');
     }
     
 }
