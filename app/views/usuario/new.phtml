@@ -31,8 +31,8 @@
 ?>
 
 <div class="form-group">
-    <label for="fieldTipodocumento" class="col-sm-2 control-label">Tipo documento</label>
-    <div class="col-sm-5">
+    <label for="fieldTipodocumento" class="col-sm-5 control-label">Tipo documento</label>
+    <div class="col-sm-10">
             <?php
             $tipodocumento = AdmTipoDocumento::find();
             echo $this->tag->select([
@@ -49,7 +49,7 @@
 
 <div class="form-group">
     <label for="fieldDocumento" class="col-sm-2 control-label">Documento</label>
-    <div class="col-sm-5">
+    <div class="col-sm-10">
         <?php echo $this->tag->numericField(["documento", "size" => 30, "class" => "form-control", "id" => "fieldDocumento"]) ?>
     </div>
 </div>
