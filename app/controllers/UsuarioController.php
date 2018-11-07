@@ -27,8 +27,20 @@ class UsuarioController extends ControllerBase
     {
         $numberPage = 1;
         
+        if ($this->request->isPost()) {
+            $query = Criteria::fromInput($this->di, 'Usuario', $_POST);
+            $this->persistent->parameters = $query->getParams();
+        } else {
+            $numberPage = $this->request->getQuery("page", "int");
+        }
 
-        $usuario = Usuario::find();
+        $parameters = $this->persistent->parameters;
+        if (!is_array($parameters)) {
+            $parameters = [];
+        }
+        $parameters["order"] = "idUsuario";
+
+        $usuario = Usuario::find($parameters);
         if (count($usuario) == 0) {
             $this->flash->notice("The search did not find any usuario");
 

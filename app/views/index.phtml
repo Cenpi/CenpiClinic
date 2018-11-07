@@ -16,9 +16,9 @@
         ?>
         <nav class="navbar navbar-expand navbar-dark bg-dark static-top fixed-top">
             <a class="navbar-brand mr-1" href="index.html"><img src="<?php echo $this->url->get('img/Logo_Cenpi.png')?>"></a>
-            <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+            <!--<button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
                 <i class="fas fa-bars"></i>
-            </button>
+            </button>-->
             <!-- Navbar Search -->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
                 <div class="input-group">
@@ -79,7 +79,7 @@
         </nav>
         <div id="wrapper" style="margin-top:58px">
             <!-- Sidebar -->
-            <ul class="sidebar navbar-nav">
+            <ul class="sidebar navbar-nav toggled">
                                 <!--
                 <li class="nav-item active">
                     <a class="nav-link" href="index.html">
@@ -174,13 +174,13 @@
                 <div class="container-fluid">
                     <?php echo $this->getContent(); ?>
                 </div>
-                <footer class="sticky-footer">
+             <!--   <footer class="sticky-footer">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
                             <span>Copyright © Your Website 2018</span>
                         </div>
                     </div>
-                </footer>
+                </footer> -->
             </div>
         </div>
         <?php 
