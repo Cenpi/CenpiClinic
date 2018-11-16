@@ -17,6 +17,16 @@
      * @var \Phalcon\Mvc\View\Engine\Php $this
      */
     ?>
+     <div class="collapse m-2" id="collapseExample">
+        <div class="card card-body">
+                
+                    <button class="btn btn-danger btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fas fa-times"></i>
+                    </button>
+
+                <?php $this->partial('usuario/index'); ?>
+        </div>
+    </div>
 
     <?php use Phalcon\Tag; ?>
     <?php echo $this->getContent(); ?> 
@@ -27,6 +37,9 @@
                      <h5><i class="fas fa-table"></i> Listado de usuarios</h5>
                 </div>        
                 <div class="col-md-3 text-right">
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    <i class="fas fa-filter"></i> Filtros
+                </button>
                     <?php 
                         echo $this->tag->linkTo(["usuario/new", "<i class='fas fa-plus-square'></i> <span>Crear Usuario</span>", "class" => "btn btn-success text-rigth"]); 
                     ?>

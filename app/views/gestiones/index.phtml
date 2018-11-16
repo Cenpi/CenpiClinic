@@ -20,7 +20,13 @@
                         <ul class="list-unstyled mb-4">
                             <li>Acá podra gestionar todo lo relacionado con las eps vigentes </li>
                         </ul>
-                        <button type="button" class="btn btn-outline-secondary mb-3">Gestionar</button>
+                        <?php 
+                            echo $this->tag->linkTo([
+                                "adm_eps/search",
+                                '<span>Gestionar</span>',
+                                "class" => "btn btn-outline-secondary mb-3"
+                                ]); 
+                        ?>
                     </div>
                 </div>
                 <div class="card card-pricing text-center px-3 mb-4">
@@ -29,7 +35,13 @@
                         <ul class="list-unstyled mb-4">
                             <li>Acá podra gestionar todo lo relacionado con los exámenes y su parametrización </li>
                         </ul>
-                        <button type="button" class="btn btn-outline-warning mb-3 ">Gestionar</button>
+                        <?php 
+                            echo $this->tag->linkTo([
+                                "adm_eps/search",
+                                '<span>Gestionar</span>',
+                                "class" => "btn btn-outline-secondary mb-3"
+                                ]); 
+                        ?>
                     </div>
                 </div>
                 <div class="card card-pricing text-center px-3 mb-4">
@@ -38,14 +50,19 @@
                         <ul class="list-unstyled mb-4">
                             <li>Acá podra gestionar todo lo relacionado con la perfilación </li>
                         </ul>
-                        <button type="button" class="btn btn-outline-secondary mb-3">Gestionar</button>
+                        <?php 
+                            echo $this->tag->linkTo([
+                                "adm_perfil/search",
+                                '<span>Gestionar</span>',
+                                "class" => "btn btn-outline-secondary mb-3"
+                                ]); 
+                        ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
+<!--
     <div class="row">
         <div class="container mb-3 mt-4">
             <div class="pricing card-deck flex-column flex-md-row mb-4">
@@ -85,4 +102,5 @@
             </div>
         </div>
     </div>
+    -->
 </div>
