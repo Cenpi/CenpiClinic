@@ -127,7 +127,7 @@ class AdmEpsController extends ControllerBase
             return;
         }
 
-        $this->flash->success("adm_ep was created successfully");
+        $this->flash->success("EPS creada correctamente successfully");
 
         $this->dispatcher->forward([
             'controller' => "adm_eps",
