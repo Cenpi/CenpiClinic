@@ -52,12 +52,12 @@
                         <?php foreach ($page->items as $usuario): ?>
                         <tr class="<?php if($usuario->UsuarioEstado->idEstado != 1){echo "table-danger";}?>">
                             <th scope="row" class="text-center"><?php echo $usuario->AdmTipoDocumento->iniciales?></th>
-                            <td><?php echo $usuario->documento ?></td>
-                            <td><?php echo $usuario->primerNombre." ".$usuario->segundoNombre ?> </td>
-                            <td><?php echo $usuario->primerApellido." ".$usuario->segundoApellido ?></td>
-                            <td><?php echo $usuario->correo ?></td>
-                            <td><?php echo $usuario->AdmPerfil->nombrePerfil ?></td>
-                            <td><?php echo $usuario->fechaCreacion ?></td>
+                            <td class="text-center"><?php echo $usuario->documento ?></td>
+                            <td class="text-center"><?php echo $usuario->primerNombre." ".$usuario->segundoNombre ?> </td>
+                            <td class="text-center"><?php echo $usuario->primerApellido." ".$usuario->segundoApellido ?></td>
+                            <td class="text-center"><?php echo $usuario->correo ?></td>
+                            <td class="text-center"><?php echo $usuario->AdmPerfil->nombrePerfil ?></td>
+                            <td class="text-center"><?php echo $usuario->fechaCreacion ?></td>
                             <td class="text-center"><?php echo $this->tag->linkTo(["usuario/edit/" . $usuario->idUsuario, "<i class='fas fa-pencil-alt'></i>" , "class" => "btn btn-warning btn-sm"]); ?></td>  
                         </tr>
                         <?php endforeach; ?>

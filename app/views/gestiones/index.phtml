@@ -10,8 +10,13 @@
                     <div class="card-body pt-0">
                         <ul class="list-unstyled mb-4">
                             <li>Acá podra gestionar todo lo relacionado con las eps vigentes </li>
-                        </ul>
-                        <button type="button" class="btn btn-outline-secondary mb-3">Gestionar</button>
+                        </ul>                          
+                             <?php 
+                                echo $this->tag->linkTo([
+                                  "adm_eps/search",
+                                  "Gestionar EPS",
+                                  "class" => "btn btn-outline-primary"]); 
+                             ?>                           
                     </div>
                 </div>
 
@@ -22,7 +27,12 @@
                         <ul class="list-unstyled mb-4">
                             <li>Acá podra gestionar todo lo relacionado con los exámenes y su parametrización </li>
                         </ul>
-                        <button type="button" class="btn btn-outline-warning mb-3">Gestionar</button>
+                        <?php 
+                                echo $this->tag->linkTo([
+                                  "adm_eps/search",
+                                  "Gestionar Examenes",
+                                  "class" => "btn btn-outline-primary"]); 
+                             ?>  
                     </div>
                 </div>
 
@@ -34,7 +44,12 @@
                         <ul class="list-unstyled mb-4">
                             <li>Acá podra gestionar todo lo relacionado con la perfilación </li>
                         </ul>
-                        <button type="button" class="btn btn-outline-secondary mb-3">Gestionar</button>
+                        <?php 
+                                echo $this->tag->linkTo([
+                                  "adm_perfil/search",
+                                  "Gestionar Perfiles",
+                                  "class" => "btn btn-outline-primary"]); 
+                             ?>  
                     </div>
                 </div>
         </div>
@@ -52,7 +67,12 @@
                         <ul class="list-unstyled mb-4">
                             <li>Acá podra gestionar todo lo relacionado con las eps vigentes </li>
                         </ul>
-                        <button type="button" class="btn btn-outline-secondary mb-3">Gestionar</button>
+                        <?php 
+                                echo $this->tag->linkTo([
+                                  "adm_eps/search",
+                                  "Gestionar EPS",
+                                  "class" => "btn btn-outline-primary"]); 
+                             ?>  
                     </div>
                 </div>
 
@@ -63,7 +83,12 @@
                         <ul class="list-unstyled mb-4">
                             <li>Acá podra gestionar todo lo relacionado con los exámenes y su parametrización </li>
                         </ul>
-                        <button type="button" class="btn btn-outline-secondary mb-3">Gestionar</button>
+                        <?php 
+                                echo $this->tag->linkTo([
+                                  "adm_eps/search",
+                                  "Gestionar EPS",
+                                  "class" => "btn btn-outline-primary"]); 
+                             ?>  
                     </div>
                 </div>
 
@@ -75,7 +100,12 @@
                         <ul class="list-unstyled mb-4">
                             <li>Acá podra gestionar todo lo relacionado con la perfilación </li>
                         </ul>
-                        <button type="button" class="btn btn-outline-secondary mb-3">Gestionar</button>
+                        <?php 
+                                echo $this->tag->linkTo([
+                                  "adm_eps/search",
+                                  "Gestionar EPS",
+                                  "class" => "btn btn-outline-primary"]); 
+                             ?>  
                     </div>
                 </div>
         </div>
