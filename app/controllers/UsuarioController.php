@@ -24,42 +24,21 @@ class UsuarioController extends ControllerBase
      * Searches for usuario
      */
     public function searchAction()
-    {
-        
-        $numberPage = 1;
-        
-        if ($this->request->isPost()) {
-            $query = Criteria::fromInput($this->di, 'Usuario', $_POST);
-            $this->persistent->parameters = $query->getParams();
-        } else {
-            $numberPage = $this->request->getQuery("page", "int");
-        }
-
-        $parameters = $this->persistent->parameters;
-        if (!is_array($parameters)) {
-            $parameters = [];
-        }
-        $parameters["order"] = "idUsuario";
-
-        $usuario = Usuario::find($parameters);
-        if (count($usuario) == 0) {
-            $this->flash->notice("The search did not find any usuario");
-
-            $this->dispatcher->forward([
-                "controller" => "usuario",
-                "action" => "index"
+    {        
+            $numberPage = 1;
+            
+            if (!$this->request->isPost()) {
+                $numberPage = $this->request->getQuery("page", "int");
+            } 
+            $usuario = Usuario::find();   
+    
+            $paginator = new Paginator([
+                'data' => $usuario,
+                'limit'=> 10,
+                'page' => $numberPage
             ]);
-
-            return;
-        }
-
-        $paginator = new Paginator([
-            'data' => $usuario,
-            'limit'=> 10,
-            'page' => $numberPage
-        ]);
-
-        $this->view->page = $paginator->getPaginate();
+    
+            $this->view->page = $paginator->getPaginate();
     }
 
     /**
