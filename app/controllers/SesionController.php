@@ -14,6 +14,8 @@ class SesionController extends ControllerBase
     {
         $this->session->set('auth', array(
             'id' => $usuario->idUsuario,
+            'nombre' => $usuario->primerNombre,
+            'apellido' => $usuario->primerApellido, 
             'correo' => $usuario->correo,
             'rol' => $usuario->AdmPerfil->nombrePerfil
         ));

@@ -25,6 +25,7 @@ class UsuarioController extends ControllerBase
      */
     public function searchAction()
     {
+        
         $numberPage = 1;
         
         if ($this->request->isPost()) {
