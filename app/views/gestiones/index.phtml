@@ -2,11 +2,11 @@
     <!-- Breadcrumbs-->
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <?php 
+            <?php
                 echo $this->tag->linkTo([
                     "index",
                     '<i class="fas fa-fw fa-tachometer-alt"></i> Dashboard'
-                    ]); 
+                    ]);
             ?>
         </li>
         <li class="breadcrumb-item active"><i class="fas fa-cogs"></i> <span>Gestiones</span></li>
@@ -19,13 +19,13 @@
                     <div class="card-body pt-0">
                         <ul class="list-unstyled mb-4">
                             <li>Acá podra gestionar todo lo relacionado con las eps vigentes </li>
-                        </ul>                          
-                             <?php 
+                        </ul>
+                             <?php
                                 echo $this->tag->linkTo([
                                   "adm_eps/search",
                                   "Gestionar EPS",
-                                  "class" => "btn btn-outline-primary"]); 
-                             ?>                           
+                                  "class" => "btn btn-outline-primary"]);
+                             ?>
                     </div>
                 </div>
                 <div class="card card-pricing text-center px-3 mb-4">
@@ -34,12 +34,12 @@
                         <ul class="list-unstyled mb-4">
                             <li>Acá podra gestionar todo lo relacionado con los exámenes y su parametrización </li>
                         </ul>
-                        <?php 
+                        <?php
                                 echo $this->tag->linkTo([
                                   "adm_eps/search",
                                   "Gestionar Examenes",
-                                  "class" => "btn btn-outline-primary"]); 
-                             ?>  
+                                  "class" => "btn btn-outline-primary"]);
+                             ?>
                     </div>
                 </div>
                 <div class="card card-pricing text-center px-3 mb-4">
@@ -48,12 +48,12 @@
                         <ul class="list-unstyled mb-4">
                             <li>Acá podra gestionar todo lo relacionado con la perfilación </li>
                         </ul>
-                        <?php 
+                        <?php
                            echo $this->tag->linkTo([
                             "adm_perfil/search",
                             "Gestionar Perfiles",
-                            "class" => "btn btn-outline-primary"]); 
-                         ?>  
+                            "class" => "btn btn-outline-primary"]);
+                         ?>
                     </div>
                 </div>
             </div>
@@ -61,54 +61,54 @@
     </div>
 </div>
 
-
+<!--
 <div class="row">
     <div class="container mb-3 mt-4">
         <div class="pricing card-deck flex-column flex-md-row mb-4">
                 <div class="card card-pricing text-center px-3 mb-4">
                     <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">EPS</span>
-                
+
                     <div class="card-body pt-0">
                         <ul class="list-unstyled mb-4">
                             <li>Acá podra gestionar todo lo relacionado con las eps vigentes </li>
                         </ul>
-                        <?php 
-                                echo $this->tag->linkTo([
-                                  "adm_eps/search",
-                                  "Gestionar EPS",
-                                  "class" => "btn btn-outline-primary"]); 
-                             ?>  
+                        <?php
+                                // echo $this->tag->linkTo([
+                                //   "adm_eps/search",
+                                //   "Gestionar EPS",
+                                //   "class" => "btn btn-outline-primary"]);
+                             ?>
                     </div>
 
                 <div class="card card-pricing text-center px-3 mb-4">
                     <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">EXAMENES</span>
-                
+
                     <div class="card-body pt-0">
                         <ul class="list-unstyled mb-4">
                             <li>Acá podra gestionar todo lo relacionado con los exámenes y su parametrización </li>
                         </ul>
-                        <?php 
-                                echo $this->tag->linkTo([
-                                  "adm_eps/search",
-                                  "Gestionar EPS",
-                                  "class" => "btn btn-outline-primary"]); 
-                             ?>  
+                        <?php
+                                // echo $this->tag->linkTo([
+                                //   "adm_eps/search",
+                                //   "Gestionar EPS",
+                                //   "class" => "btn btn-outline-primary"]);
+                             ?>
                     </div>
 
-                
+
                 <div class="card card-pricing text-center px-3 mb-4">
                     <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">PERFILES</span>
-                
+
                     <div class="card-body pt-0">
                         <ul class="list-unstyled mb-4">
                             <li>Acá podra gestionar todo lo relacionado con la perfilación </li>
                         </ul>
-                        <?php 
-                                echo $this->tag->linkTo([
-                                  "adm_eps/search",
-                                  "Gestionar EPS",
-                                  "class" => "btn btn-outline-primary"]); 
-                             ?>  
+                        <?php
+                                // echo $this->tag->linkTo([
+                                //   "adm_eps/search",
+                                //   "Gestionar EPS",
+                                //   "class" => "btn btn-outline-primary"]); 
+                             ?>
                     </div>
             </div>
         </div>
