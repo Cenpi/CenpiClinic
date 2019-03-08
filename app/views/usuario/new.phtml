@@ -1,14 +1,22 @@
 <div class="container-fluid">
-<ol class="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <?php 
+                echo $this->tag->linkTo([
+                    "index",
+                    '<i class="fas fa-fw fa-tachometer-alt"></i> Dashboard'
+                    ]); 
+            ?>
+        </li>
         <li class="breadcrumb-item">
             <?php 
                 echo $this->tag->linkTo([
                     "usuario",
-                    'Usuarios'
+                    '<i class="fas fa-user-cog"></i> Usuarios'
                     ]); 
             ?>
         </li>
-        <li class="breadcrumb-item active">Creación de usuarios</li>
+        <li class="breadcrumb-item active"><i class="fas fa-user-plus"></i> Creación de usuarios</li>
     </ol>
 
 <?php
