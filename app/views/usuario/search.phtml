@@ -2,11 +2,11 @@
     <!-- Breadcrumbs-->
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <?php 
+            <?php
                 echo $this->tag->linkTo([
                     "index",
                     '<i class="fas fa-fw fa-tachometer-alt"></i> Dashboard'
-                    ]); 
+                    ]);
             ?>
         </li>
         <li class="breadcrumb-item active"><i class="fas fa-user-cog"></i> <span>Usuarios</span></li>
@@ -19,25 +19,24 @@
     ?>
      <div class="collapse m-2" id="collapseExample">
         <div class="card card-body">
-
                 <?php $this->partial('usuario/index'); ?>
         </div>
     </div>
 
     <?php use Phalcon\Tag; ?>
-    <?php echo $this->getContent(); ?> 
+    <?php echo $this->getContent(); ?>
     <div class="card mb-3">
         <div class="card-header">
             <div class="row">
                 <div class="col-md-9">
                      <h5><i class="fas fa-table"></i> Listado de usuarios</h5>
-                </div>        
+                </div>
                 <div class="col-md-3 text-right">
                 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                     <i class="fas fa-filter"></i> Filtros
                 </button>
-                    <?php 
-                        echo $this->tag->linkTo(["usuario/new", "<i class='fas fa-plus-square'></i> <span>Crear Usuario</span>", "class" => "btn btn-success text-rigth"]); 
+                    <?php
+                        echo $this->tag->linkTo(["usuario/new", "<i class='fas fa-plus-square'></i> <span>Crear Usuario</span>", "class" => "btn btn-success text-rigth"]);
                     ?>
                 </div>
             </div>
@@ -67,7 +66,7 @@
                             <td class="text-center"><?php echo $usuario->correo ?></td>
                             <td class="text-center"><?php echo $usuario->AdmPerfil->nombrePerfil ?></td>
                             <td class="text-center"><?php echo $usuario->fechaCreacion ?></td>
-                            <td class="text-center"><?php echo $this->tag->linkTo(["usuario/edit/" . $usuario->idUsuario, "<i class='fas fa-pencil-alt'></i>" , "class" => "btn btn-warning btn-sm"]); ?></td>  
+                            <td class="text-center"><?php echo $this->tag->linkTo(["usuario/edit/" . $usuario->idUsuario, "<i class='fas fa-pencil-alt'></i>" , "class" => "btn btn-warning btn-sm"]); ?></td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -78,7 +77,7 @@
             <div class="row">
                 <div class="col-md-1 p-2 mb-1 bg-danger text-white"><b>Usuarios Anulados</b></div>
                 <div class="col-md-4">
-                    
+
                 </div>
                 <div class="col-md-4">
                     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
@@ -98,4 +97,3 @@
             </div>
         </div>
     </div>
-

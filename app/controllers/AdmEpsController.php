@@ -1,5 +1,5 @@
 <?php
- 
+
 use Phalcon\Mvc\Model\Criteria;
 use Phalcon\Paginator\Adapter\Model as Paginator;
 
@@ -12,6 +12,10 @@ class AdmEpsController extends ControllerBase
     public function indexAction()
     {
         $this->persistent->parameters = null;
+        $this->dispatcher->forward([
+            "controller" => "adm_eps",
+            "action" => "search"
+        ]);
     }
 
     /**
@@ -88,7 +92,7 @@ class AdmEpsController extends ControllerBase
             $this->tag->setDefault("idEps", $adm_eps->idEps);
             $this->tag->setDefault("nitEps", $adm_eps->nitEps);
             $this->tag->setDefault("nombreEps", $adm_eps->nombreEps);
-            
+
         }
     }
 
@@ -109,7 +113,7 @@ class AdmEpsController extends ControllerBase
         $adm_ep = new AdmEps();
         $adm_ep->nitEps = $this->request->getPost("nitEps");
         $adm_ep->nombreEps = $this->request->getPost("nombreEps");
-        
+
 
         if (!$adm_ep->save()) {
             foreach ($adm_ep->getMessages() as $message) {
@@ -164,7 +168,7 @@ class AdmEpsController extends ControllerBase
 
         $adm_ep->nitEps = $this->request->getPost("nitEps");
         $adm_ep->nombreEps = $this->request->getPost("nombreEps");
-        
+
 
         if (!$adm_ep->save()) {
 
