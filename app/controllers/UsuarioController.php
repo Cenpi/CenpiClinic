@@ -138,6 +138,12 @@ class UsuarioController extends ControllerBase
 
         $this->flash->success("Usuario creado correctamente");
 
+        $subject = ' 🏥 Mensaje de Bienvenida';
+        $body = 'Hola ' .$usuario->primerNombre. ' Link para inicio de sesión: http://localhost/CenpiClinic/sesion/';
+       
+        $utilities = new Utilities();
+        $utilities->sendEmail($usuario->correo, $subject, $body);  
+
         $this->dispatcher->forward([
             'controller' => "usuario",
             'action' => 'index'
