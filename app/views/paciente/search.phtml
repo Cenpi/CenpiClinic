@@ -49,24 +49,24 @@
                     <thead class="thead-dark">
                     
                         <tr>
-                        <th>TipoDocumento</th>
-                        <th>Documento</th>
-                        <th>Fecha Nacimiento</th>
-                        <th> Nombre</th>
-                        <th> Apellido</th>
-                        <th>Género</th>
-                        <th>Dirección</th>
-                        <th>Correo</th>
-                        <th>Teléfono</th>
-                        <th>Celular</th>
-                        <th>Eps</th>
-                        <th>Municipio</th>
-                        <th>Zona</th>
-                        <th>Regimen</th>
-                        <th>Tipo Afiliacion</th>
-                        <th>Parentezco</th>
-                        <th>Rango Salarial</th>
-                        <th>Fecha Ingreso</th>
+                        <th class="text-center">TipoDocumento</th>
+                        <th class="text-center">Documento</th>
+                        <th class="text-center">Fecha Nacimiento</th>
+                        <th class="text-center"> Nombre</th>
+                        <th class="text-center"> Apellido</th>
+                        <th class="text-center">Género</th>
+                        <th class="text-center">Dirección</th>
+                        <th class="text-center">Correo</th>
+                        <th class="text-center">Teléfono</th>
+                        <th class="text-center">Celular</th>
+                        <th class="text-center">Eps</th>
+                        <th class="text-center">Municipio</th>
+                        <th class="text-center" >Zona</th>
+                        <th class="text-center">Regimen</th>
+                        <th class="text-center">Tipo Afiliacion</th>
+                        <th class="text-center">Parentezco</th>
+                        <th class="text-center">Rango Salarial</th>
+                        <th class="text-center">Fecha Ingreso</th>
 
                             
                             <th></th>
@@ -76,24 +76,24 @@
                     <?php foreach ($page->items as $paciente): ?>
                         <tr>
                         
-                        <td><?php echo $paciente->AdmTipoDocumento->iniciales ?></td>
-                        <td><?php echo $paciente->documento ?></td>
-                        <td><?php echo $paciente->fechaNacimiento ?></td>
-                        <td><?php echo $paciente->primerNombre." ".$paciente->segundoNombre?></td>
-                        <td><?php echo $paciente->primerApellido." ".$paciente->segundoApellido ?></td>
-                        <td><?php echo $paciente->AdmGenero->nombreGenero ?></td>
-                        <td><?php echo $paciente->direccion ?></td>
-                        <td><?php echo $paciente->email ?></td>
-                        <td><?php echo $paciente->telefono ?></td>
-                        <td><?php echo $paciente->celular ?></td>
-                        <td><?php echo $paciente->Admeps->nombreEps?></td>
-                        <td><?php echo $paciente->AdmMunicipio->nombreMunicipio ?></td>
-                        <td><?php echo $paciente->AdmZona->nombreZona ?></td>
-                        <td><?php echo $paciente->AdmRegimen->nombreRegimen ?></td>
-                        <td><?php echo $paciente->PacienteTipoAfiliacion->nombreTipoAfiliacion ?></td>
-                        <td><?php echo $paciente->PacienteParentezco->nombreParentezco ?></td>
-                        <td><?php echo $paciente->PacienteRangoSalarial->nombreRangoSalarial ?></td>
-                        <td><?php echo $paciente->fechaIngreso ?></td>
+                        <td class="text-center"><?php echo $paciente->AdmTipoDocumento->iniciales ?></td>
+                        <td class="text-center"><?php echo $paciente->documento ?></td>
+                        <td class="text-center"><?php echo $paciente->fechaNacimiento ?></td>
+                        <td class="text-center"><?php echo $paciente->primerNombre." ".$paciente->segundoNombre?></td>
+                        <td class="text-center"><?php echo $paciente->primerApellido." ".$paciente->segundoApellido ?></td>
+                        <td class="text-center"><?php echo $paciente->AdmGenero->nombreGenero ?></td>
+                        <td class="text-center"><?php echo $paciente->direccion ?></td>
+                        <td class="text-center"><?php echo $paciente->email ?></td>
+                        <td class="text-center"><?php echo $paciente->telefono ?></td>
+                        <td class="text-center"><?php echo $paciente->celular ?></td>
+                        <td class="text-center"><?php echo $paciente->Admeps->nombreEps?></td>
+                        <td class="text-center"><?php echo $paciente->AdmMunicipio->nombreMunicipio ?></td>
+                        <td class="text-center"><?php echo $paciente->AdmZona->nombreZona ?></td>
+                        <td class="text-center"><?php echo $paciente->AdmRegimen->nombreRegimen ?></td>
+                        <td class="text-center"><?php echo $paciente->PacienteTipoAfiliacion->nombreTipoAfiliacion ?></td>
+                        <td class="text-center"><?php echo $paciente->PacienteParentezco->nombreParentezco ?></td>
+                        <td class="text-center"><?php echo $paciente->PacienteRangoSalarial->nombreRangoSalarial ?></td>
+                        <td class="text-center"><?php echo $paciente->fechaIngreso ?></td>
                         <td class="text-center"><?php echo $this->tag->linkTo(["paciente/edit/" . $paciente->idPaciente, "<i class='fas fa-pencil-alt'></i>" , "class" => "btn btn-warning btn-sm"]); ?></td>
 
 
@@ -113,10 +113,10 @@
                 <div class="col-md-4">
                     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                         <div class="btn-group mr-2" role="group" aria-label="First group">
-                            <?php echo $this->tag->linkTo(["usuario/search", "Primero", "class" => "btn btn-outline-primary"]) ?>
-                            <?php echo $this->tag->linkTo(["usuario/search?page=" . $page->before, "Anterior", "class" => "btn btn-outline-primary"]) ?>
-                            <?php echo $this->tag->linkTo(["usuario/search?page=" . $page->next, "Siguiente", "class" => "btn btn-outline-primary"]) ?>
-                            <?php echo $this->tag->linkTo(["usuario/search?page=" . $page->last, "Último", "class" => "btn btn-outline-primary"]) ?>
+                            <?php echo $this->tag->linkTo(["paciente/search", "Primero", "class" => "btn btn-outline-primary"]) ?>
+                            <?php echo $this->tag->linkTo(["paciente/search?page=" . $page->before, "Anterior", "class" => "btn btn-outline-primary"]) ?>
+                            <?php echo $this->tag->linkTo(["paciente/search?page=" . $page->next, "Siguiente", "class" => "btn btn-outline-primary"]) ?>
+                            <?php echo $this->tag->linkTo(["paciente/search?page=" . $page->last, "Último", "class" => "btn btn-outline-primary"]) ?>
                         </div>
                     </div>
                 </div>
