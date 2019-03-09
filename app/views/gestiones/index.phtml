@@ -36,7 +36,7 @@
                         </ul>
                         <?php
                                 echo $this->tag->linkTo([
-                                  "adm_eps/index",
+                                  "adm_tipoExamen/search",
                                   "Gestionar Examenes",
                                   "class" => "btn btn-outline-primary"]);
                              ?>
@@ -50,13 +50,64 @@
                         </ul>
                         <?php
                            echo $this->tag->linkTo([
-                            "adm_perfil/index",
+                            "adm_perfil/search",
                             "Gestionar Perfiles",
                             "class" => "btn btn-outline-primary"]);
                          ?>
                     </div>
                 </div>
-            </div>
+
+            
+            </div>             
+        </div>
+
+        <div class="container mb-3 mt-4">
+            <div class="pricing card-deck flex-column flex-md-row mb-4">
+                <div class="card card-pricing text-center px-3 mb-4">
+                    <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">PACIENTES</span>
+                    <div class="card-body pt-0">
+                        <ul class="list-unstyled mb-4">
+                            <li>Acá podra gestionar todo lo relacionado con los pacientes </li>
+                        </ul>
+                             <?php
+                                echo $this->tag->linkTo([
+                                  "paciente/search",
+                                  "Gestionar Pacientes",
+                                  "class" => "btn btn-outline-primary"]);
+                             ?>
+                    </div>
+                </div>
+                <div class="card card-pricing text-center px-3 mb-4">
+                    <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">RANGO SALARIAL</span>
+                    <div class="card-body pt-0">
+                        <ul class="list-unstyled mb-4">
+                            <li>Acá podra gestionar todo lo relacionado con los rangos salariales </li>
+                        </ul>
+                        <?php
+                                echo $this->tag->linkTo([
+                                  "paciente_rango_salarial/search",
+                                  "Gestionar Rango Salarial",
+                                  "class" => "btn btn-outline-primary"]);
+                             ?>
+                    </div>
+                </div>
+                <div class="card card-pricing text-center px-3 mb-4">
+                    <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">AFILIACIONES</span>
+                    <div class="card-body pt-0">
+                        <ul class="list-unstyled mb-4">
+                            <li>Acá podra gestionar todo lo relacionado con tipos de afiliaciones </li>
+                        </ul>
+                        <?php
+                           echo $this->tag->linkTo([
+                            "paciente_tipo_afiliacion/search",
+                            "Gestionar afiliaciones",
+                            "class" => "btn btn-outline-primary"]);
+                         ?>
+                    </div>
+                </div>
+
+          
+            </div>             
         </div>
     </div>
 </div>

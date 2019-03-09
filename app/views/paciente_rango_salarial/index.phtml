@@ -1,0 +1,56 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="page-header">
+    <h1>
+        Search paciente_rango_salarial
+    </h1>
+    <p>
+        <?php echo $this->tag->linkTo(["paciente_rango_salarial/new", "Create paciente_rango_salarial"]) ?>
+    </p>
+</div>
+
+<?php echo $this->getContent() ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "paciente_rango_salarial/search",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldIdrangosalarial" class="col-sm-2 control-label">IdRangoSalarial</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["idRangoSalarial", "type" => "number", "class" => "form-control", "id" => "fieldIdrangosalarial"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldNombrerangosalarial" class="col-sm-2 control-label">NombreRangoSalarial</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["nombreRangoSalarial", "size" => 30, "class" => "form-control", "id" => "fieldNombrerangosalarial"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldPorcentaje" class="col-sm-2 control-label">Porcentaje</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["porcentaje", "size" => 30, "class" => "form-control", "id" => "fieldPorcentaje"]) ?>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["Search", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>

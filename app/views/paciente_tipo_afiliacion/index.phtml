@@ -1,0 +1,49 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="page-header">
+    <h1>
+        Search paciente_tipo_afiliacion
+    </h1>
+    <p>
+        <?php echo $this->tag->linkTo(["paciente_tipo_afiliacion/new", "Create paciente_tipo_afiliacion"]) ?>
+    </p>
+</div>
+
+<?php echo $this->getContent() ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "paciente_tipo_afiliacion/search",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldIdtipoafiliacion" class="col-sm-2 control-label">IdTipoAfiliacion</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["idTipoAfiliacion", "type" => "number", "class" => "form-control", "id" => "fieldIdtipoafiliacion"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldNombretipoafiliacion" class="col-sm-2 control-label">NombreTipoAfiliacion</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["nombreTipoAfiliacion", "size" => 30, "class" => "form-control", "id" => "fieldNombretipoafiliacion"]) ?>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["Search", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>

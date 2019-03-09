@@ -1,0 +1,130 @@
+<div class="container-fluid">
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <?php
+                echo $this->tag->linkTo([
+                    "index",
+                    '<i class="fas fa-fw fa-tachometer-alt"></i> Dashboard'
+                    ]);
+            ?>
+        </li>
+        <li class="breadcrumb-item active"><i class="fas fa-user-cog"></i> <span>Pacientes</span></li>
+    </ol>
+
+    <?php
+    /**
+     * @var \Phalcon\Mvc\View\Engine\Php $this
+     */
+    ?>
+     <div class="collapse m-2" id="collapseExample">
+        <div class="card card-body">
+                <?php $this->partial('usuario/index'); ?>
+        </div>
+    </div>
+
+<?php use Phalcon\Tag; ?>
+
+
+<?php echo $this->getContent(); ?>
+<div class="card mb-3">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-9">
+                     <h5><i class="fas fa-table"></i> Listado de pacientes</h5>
+                </div>
+                <div class="col-md-3 text-right">
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            <i class="fas fa-filter"></i> Filtros
+                        </button>
+                            <?php
+                                echo $this->tag->linkTo(["usuario/new", "<i class='fas fa-plus-square'></i> <span>Crear paciente</span>", "class" => "btn btn-success text-rigth"]);
+                            ?>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                    <thead class="thead-dark">
+                    
+                        <tr>
+                        <th>TipoDocumento</th>
+                        <th>Documento</th>
+                        <th>Fecha Nacimiento</th>
+                        <th> Nombre</th>
+                        <th> Apellido</th>
+                        <th>Género</th>
+                        <th>Dirección</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                        <th>Celular</th>
+                        <th>Eps</th>
+                        <th>Municipio</th>
+                        <th>Zona</th>
+                        <th>Regimen</th>
+                        <th>Tipo Afiliacion</th>
+                        <th>Parentezco</th>
+                        <th>Rango Salarial</th>
+                        <th>Fecha Ingreso</th>
+
+                            
+                            <th></th>
+                        </tr>
+                    </thead>
+            <tbody>
+                    <?php foreach ($page->items as $paciente): ?>
+                        <tr>
+                        
+                        <td><?php echo $paciente->AdmTipoDocumento->iniciales ?></td>
+                        <td><?php echo $paciente->documento ?></td>
+                        <td><?php echo $paciente->fechaNacimiento ?></td>
+                        <td><?php echo $paciente->primerNombre." ".$paciente->segundoNombre?></td>
+                        <td><?php echo $paciente->primerApellido." ".$paciente->segundoApellido ?></td>
+                        <td><?php echo $paciente->AdmGenero->nombreGenero ?></td>
+                        <td><?php echo $paciente->direccion ?></td>
+                        <td><?php echo $paciente->email ?></td>
+                        <td><?php echo $paciente->telefono ?></td>
+                        <td><?php echo $paciente->celular ?></td>
+                        <td><?php echo $paciente->Admeps->nombreEps?></td>
+                        <td><?php echo $paciente->AdmMunicipio->nombreMunicipio ?></td>
+                        <td><?php echo $paciente->AdmZona->nombreZona ?></td>
+                        <td><?php echo $paciente->AdmRegimen->nombreRegimen ?></td>
+                        <td><?php echo $paciente->PacienteTipoAfiliacion->nombreTipoAfiliacion ?></td>
+                        <td><?php echo $paciente->PacienteParentezco->nombreParentezco ?></td>
+                        <td><?php echo $paciente->PacienteRangoSalarial->nombreRangoSalarial ?></td>
+                        <td><?php echo $paciente->fechaIngreso ?></td>
+                        <td class="text-center"><?php echo $this->tag->linkTo(["paciente/edit/" . $paciente->idPaciente, "<i class='fas fa-pencil-alt'></i>" , "class" => "btn btn-warning btn-sm"]); ?></td>
+
+
+                        
+                        </tr>
+                    <?php endforeach; ?>
+            </tbody>
+    </table>
+    </div>
+
+    <div class="card-footer small text-muted">
+            <div class="row">
+                <div class="col-md-1 p-2 mb-1 bg-danger text-white"><b>Usuarios Anulados</b></div>
+                <div class="col-md-4">
+
+                </div>
+                <div class="col-md-4">
+                    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="btn-group mr-2" role="group" aria-label="First group">
+                            <?php echo $this->tag->linkTo(["usuario/search", "Primero", "class" => "btn btn-outline-primary"]) ?>
+                            <?php echo $this->tag->linkTo(["usuario/search?page=" . $page->before, "Anterior", "class" => "btn btn-outline-primary"]) ?>
+                            <?php echo $this->tag->linkTo(["usuario/search?page=" . $page->next, "Siguiente", "class" => "btn btn-outline-primary"]) ?>
+                            <?php echo $this->tag->linkTo(["usuario/search?page=" . $page->last, "Último", "class" => "btn btn-outline-primary"]) ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-right">
+                        <?php echo $page->current, " / ", $page->total_pages ?>
+                    </h6>
+                </div>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,54 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="row">
+    <nav>
+        <ul class="pager">
+            <li class="previous"><?php echo $this->tag->linkTo(["adm_municipio", "Go Back"]) ?></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="page-header">
+    <h1>
+        Create adm_municipio
+    </h1>
+</div>
+
+<?php echo $this->getContent(); ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "adm_municipio/create",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldNombremunicipio" class="col-sm-2 control-label">NombreMunicipio</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["nombreMunicipio", "size" => 30, "class" => "form-control", "id" => "fieldNombremunicipio"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldProvincia" class="col-sm-2 control-label">Provincia</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["provincia", "type" => "number", "class" => "form-control", "id" => "fieldProvincia"]) ?>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["Save", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>

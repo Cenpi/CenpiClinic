@@ -196,6 +196,14 @@ CREATE TABLE `cenpiclinic`.`paciente`(
 );
 
 
+CREATE TABLE `cenpiclinic`.`adm_tipoExamen`(  
+  `idTipoExamen` INT NOT NULL AUTO_INCREMENT,
+  `nombreExamen` VARCHAR(30) NOT NULL,
+  `descTipoExamen` VARCHAR(300) NOT NULL,
+  PRIMARY KEY (`idTipoExamen`)
+);
+
+
 
 
 
