@@ -44,6 +44,7 @@
                         echo $this->tag->select(array("idPerfil",
                                                         AdmTipoDocumento::Find(),
                                                         "class" => "form-control",
+                                                        "disabled" => "disabled",
                                                         "using" => ['idTipoDocumento','nombreTipoDocumento'],));
                    ?>
                 </div>
@@ -52,7 +53,7 @@
             <div class="form-group">
                 <label for="fieldDocumento" class="col-sm-2 control-label">Documento</label>
                 <div class="col-sm-5">
-                    <?php echo $this->tag->textField(["documento", "size" => 30, "class" => "form-control", "id" => "fieldDocumento"]) ?>
+                    <?php echo $this->tag->textField(["documento", "size" => 30, "class" => "form-control", "id" => "fieldDocumento", "disabled" => "disabled"]) ?>
                 </div>
             </div>
 

@@ -201,7 +201,7 @@ class PacienteController extends ControllerBase
         $paciente->tipoDocumento = $this->request->getPost("tipoDocumento");
         $paciente->fechaNacimiento = $this->request->getPost("fechaNacimiento");
         $paciente->documento = $this->request->getPost("documento");
-        $paciente->primerNomber = $this->request->getPost("primerNomber");
+        $paciente->primerNombre = $this->request->getPost("primerNombre");
         $paciente->segundoNombre = $this->request->getPost("segundoNombre");
         $paciente->primerApellido = $this->request->getPost("primerApellido");
         $paciente->segundoApellido = $this->request->getPost("segundoApellido");
