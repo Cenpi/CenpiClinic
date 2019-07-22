@@ -55,7 +55,7 @@ class SesionController extends ControllerBase
 
                };
 
-               $this->flash->error('Correo/contrasena incorrectos');
+               $this->flash->error('Correo /contrasena incorrectos');
 
 
                 //Redireccionar al login nuevamente

@@ -121,11 +121,12 @@ class UsuarioController extends ControllerBase
         $usuario->fechaNacimiento = $this->request->getPost("fechaNacimiento");
         $usuario->estado = 2;
         $usuario->perfil = $this->request->getPost("perfil");
-        $usuario->fechaCreacion = date('Y-m-d H:m:i');   
-       
+        $usuario->fechaCreacion = Utilities::GetDate();   
+        $usuario->password_request = 0;
         if (!$usuario->save()) {
             
-            $this->flash->error("Error al guardar el usuario.");
+            $error_message = Utilities::GetErrorMessage($usuario);
+            $this->flash->error($error_message);
             
 
             $this->dispatcher->forward([
@@ -180,21 +181,21 @@ class UsuarioController extends ControllerBase
             return;
         }
 
-        $usuario->tipoDocumento = $this->request->getPost("tipoDocumento");
-        $usuario->documento = $this->request->getPost("documento");
+        // $usuario->tipoDocumento = $this->request->getPost("tipoDocumento");
+        // $usuario->documento = $this->request->getPost("documento");
         $usuario->primerNombre = $this->request->getPost("primerNombre");
         $usuario->segundoNombre = $this->request->getPost("segundoNombre");
         $usuario->primerApellido = $this->request->getPost("primerApellido");
         $usuario->segundoApellido = $this->request->getPost("segundoApellido");
         $usuario->direccion = $this->request->getPost("direccion");
-        $usuario->genero = $this->request->getPost("genero");
+        // $usuario->genero = $this->request->getPost("genero");
         $usuario->correo = $this->request->getPost("correo");
         $usuario->telefono = $this->request->getPost("telefono");
-        $usuario->contrasena = $this->request->getPost("contrasena");
+        // $usuario->contrasena = $this->request->getPost("contrasena");
         $usuario->fechaNacimiento = $this->request->getPost("fechaNacimiento");
-        $usuario->estado = $this->request->getPost("estado");
-        $usuario->perfil = $this->request->getPost("perfil");
-        $usuario->fechaCreacion = $this->request->getPost("fechaCreacion");
+        // $usuario->estado = $this->request->getPost("estado");
+        // $usuario->perfil = $this->request->getPost("perfil");
+        // $usuario->fechaCreacion = $this->request->getPost("fechaCreacion");
         
 
         if (!$usuario->save()) {

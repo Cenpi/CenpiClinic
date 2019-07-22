@@ -24,154 +24,117 @@
  * @var \Phalcon\Mvc\View\Engine\Php $this
  */
 ?>
-
-
-
-<div class="page-header">
-    <h3>
-       Crear usuario
-    </h3>
-   <br>
-        <?php echo $this->getContent(); ?>
-
-        <?php
-            echo $this->tag->form(
-                [
-                    "usuario/create",
-                    "autocomplete" => "off",
-                    "class" => "form-horizontal"
-                ]
-            );
-        ?>
-
-        <div class="form-group">
-            <label for="fieldTipodocumento" class="col-sm-2 control-label" >Tipo documento</label>
-            <div class="col-sm-5">
-                    <?php
-                    $tipodocumento = AdmTipoDocumento::find();
-                    echo $this->tag->select([
-                        'tipoDocumento',
-                        $tipodocumento,
-                        'using' => ['idTipoDocumento','nombreTipoDocumento',],
-                        'class' => 'form-control',
-                        'useEmpty' => true,
-                        'emptyText' => 'Elija un tipo de documento'
-                    ])?>
+<?php echo $this->getContent(); ?>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                    <h3 class="card-title">Crear nuevo usuario </h3>
+                    <hr>
             </div>
+            
+            <div class="card-body">
+            <?php echo $this->tag->form([ "usuario/create","autocomplete" => "off","class" => "form-horizontal"]);?>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="fieldTipodocumento" class="control-label" >Tipo documento</label>
+                        <?php
+                        echo $this->tag->select([
+                            'tipoDocumento',
+                            AdmTipoDocumento::find(),
+                            'using' => ['idTipoDocumento','nombreTipoDocumento',],
+                            'class' => 'form-control',
+                            'useEmpty' => true,
+                            'emptyText' => 'Elija un tipo de documento'
+                        ])?>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="fieldDocumento" class="control-label">Documento</label>
+                        <?php echo $this->tag->numericField(["documento", "class" => "form-control", "id" => "fieldDocumento"]) ?>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="fieldPrimernombre" class="control-label">Primer nombre</label>
+                        <?php echo $this->tag->textField(["primerNombre", "class" => "form-control", "id" => "fieldPrimernombre" ]) ?>
+                    </div>                    
+
+                    <div class="col-md-3">
+                        <label for="fieldSegundonombre" class="control-label">Segundo nombre</label>
+                        <?php echo $this->tag->textField(["segundoNombre","class" => "form-control", "id" => "fieldSegundonombre"]) ?>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="fieldPrimerapellido" class="control-label">Primer apellido</label>
+                        <?php echo $this->tag->textField(["primerApellido", "class" => "form-control", "id" => "fieldPrimerapellido"]) ?>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="fieldSegundoapellido" class="control-label">Segundo apellido</label>
+                        <?php echo $this->tag->textField(["segundoApellido", "class" => "form-control", "id" => "fieldSegundoapellido"]) ?>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="fieldDireccion" class="control-label">Direccion</label>
+                        <?php echo $this->tag->textField(["direccion", "class" => "form-control", "id" => "fieldDireccion"]) ?>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="fieldGenero" class="control-label">Genero</label>
+                        <?php
+                            echo $this->tag->select([
+                                'genero',
+                                AdmGenero::find(),
+                                'using' => ['idGenero','nombreGenero'],
+                                'class' => 'form-control',
+                                'useEmpty' => true,
+                                'emptyText' =>'Elija un género'
+                            ])
+                        ?>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="fieldCorreo" class="control-label">Correo</label>
+                        <?php echo $this->tag->textField(["correo", "class" => "form-control", "id" => "fieldCorreo"]) ?>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="fieldTelefono" class="control-label">Teléfono</label>
+                        <?php echo $this->tag->numericField(["telefono", "class" => "form-control", "id" => "fieldTelefono"]) ?>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="fieldContrasena" class="control-label">Contraseña</label>
+                        <?php echo $this->tag->passwordField(["contrasena", "class" => "form-control", "id" => "fieldContrasena" , "autocomplete" => "off"]) ?>
+                    </div>
+
+                     <div class="col-md-3">
+                        <label for="fieldFechanacimiento" class="control-label">Fecha nacimiento</label>
+                        <?php echo $this->tag->dateField(["fechaNacimiento", "type" => "date","class" => "form-control", "id" => "fieldFechanacimiento"]) ?>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="fieldPerfil" class="control-label">Perfil</label>
+                        <?php 
+                            echo $this->tag->select([
+                            'perfil', 
+                            AdmPerfil::find(), 
+                            'class' => "form-control", 
+                            'using' => ['idPerfil','nombrePerfil'],
+                            'useEmpty' => true,
+                            'emptyText' => 'Elija un tipo de perfil para el usuario'
+                            ]) ?>
+                    </div>
+
+                    <div class="col-md-3">
+                        <?php echo $this->tag->submitButton(["Guardar", "class" => "btn btn-primary" , "style" => "margin-top:2em"]) ?>
+                    </div>
+                </div>                 
+                
+            <?php echo $this->tag->endForm(); ?>
+            </div>                
         </div>
-
-      
-
-
-        <div class="form-group">
-            <label for="fieldDocumento" class="col-sm-2 control-label">Documento</label>
-            <div class="col-sm-5">
-                <?php echo $this->tag->numericField(["documento", "size" => 30, "class" => "form-control", "id" => "fieldDocumento"]) ?>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="fieldPrimernombre" class="col-sm-2 control-label">Primer nombre</label>
-            <div class="col-sm-5">
-                <?php echo $this->tag->textField(["primerNombre", "size" => 30, "class" => "form-control", "id" => "fieldPrimernombre"]) ?>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="fieldSegundonombre" class="col-sm-2 control-label">Segundo nombre</label>
-            <div class="col-sm-5">
-                <?php echo $this->tag->textField(["segundoNombre", "size" => 30, "class" => "form-control", "id" => "fieldSegundonombre"]) ?>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="fieldPrimerapellido" class="col-sm-2 control-label">Primer apellido</label>
-            <div class="col-sm-5">
-                <?php echo $this->tag->textField(["primerApellido", "size" => 30, "class" => "form-control", "id" => "fieldPrimerapellido"]) ?>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="fieldSegundoapellido" class="col-sm-2 control-label">Segundo apellido</label>
-            <div class="col-sm-5">
-                <?php echo $this->tag->textField(["segundoApellido", "size" => 30, "class" => "form-control", "id" => "fieldSegundoapellido"]) ?>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="fieldDireccion" class="col-sm-2 control-label">Direccion</label>
-            <div class="col-sm-5">
-                <?php echo $this->tag->textField(["direccion", "size" => 30, "class" => "form-control", "id" => "fieldDireccion"]) ?>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="fieldGenero" class="col-sm-2 control-label">Genero</label>
-            <div class="col-sm-5">
-                <?php
-                    $genero = AdmGenero::find();
-                    echo $this->tag->select([
-                        'genero',
-                        $genero,
-                        'using' => ['idGenero','nombreGenero'],
-                        'class' => 'form-control',
-                        'useEmpty' => true,
-                        'emptyText' =>'Elija un género'
-                    ])
-                ?>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="fieldCorreo" class="col-sm-2 control-label">Correo</label>
-            <div class="col-sm-5">
-                <?php echo $this->tag->emailField(["correo", "size" => 30, "class" => "form-control", "id" => "fieldCorreo"]) ?>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="fieldTelefono" class="col-sm-2 control-label">Teléfono</label>
-            <div class="col-sm-5">
-                <?php echo $this->tag->numericField(["telefono", "size" => 30, "class" => "form-control", "id" => "fieldTelefono"]) ?>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="fieldContrasena" class="col-sm-2 control-label">Contraseña</label>
-            <div class="col-sm-5">
-                <?php echo $this->tag->passwordField(["contrasena", "size" => 30, "class" => "form-control", "id" => "fieldContrasena"]) ?>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="fieldFechanacimiento" class="col-sm-2 control-label">Fecha nacimiento</label>
-            <div class="col-sm-5">
-                <?php echo $this->tag->dateField(["fechaNacimiento", "type" => "date", "class" => "form-control", "id" => "fieldFechanacimiento"]) ?>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="fieldPerfil" class="col-sm-2 control-label">Perfil</label>
-            <div class="col-sm-5">
-                <?php 
-                    $perfil = AdmPerfil::find();
-                echo $this->tag->select([
-                    'perfil', 
-                    $perfil, 
-                    'class' => "form-control", 
-                    'using' => ['idPerfil','nombrePerfil'],
-                    'useEmpty' => true,
-                    'emptyText' => 'Elija un tipo de perfil para el usuario'
-                    ]) ?>
-            </div>
-        </div>
-
-
-
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <?php echo $this->tag->submitButton(["Guardar", "class" => "btn btn-primary"]) ?>
-            </div>
-        </div>
+    </div>                   
 </div>
-<?php echo $this->tag->endForm(); ?>
+
